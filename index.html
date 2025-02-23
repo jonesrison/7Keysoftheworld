@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Keys Of the World</title>
+    <meta http-equiv="refresh" content="15">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; position: relative; margin: 0; overflow: hidden; }
+        h1 { text-align: center; color: #333; position: relative; z-index: 10; }
+        .qr-container { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; }
+        .qr { position: absolute; transition: transform 0.3s ease-in-out; }
+        .qr:hover { transform: scale(1.2); }
+    </style>
+    <script>
+        function randomizePositions() {
+            const qrElements = document.querySelectorAll('.qr');
+            qrElements.forEach(el => {
+                const randomX = Math.random() * (window.innerWidth - 100);
+                const randomY = Math.random() * (window.innerHeight - 100);
+                const randomSize = Math.floor(Math.random() * 100) + 50;
+                el.style.left = `${randomX}px`;
+                el.style.top = `${randomY}px`;
+                el.style.width = `${randomSize}px`;
+                el.style.height = `${randomSize}px`;
+            });
+        }
+        window.onload = randomizePositions;
+        window.onresize = randomizePositions;
+    </script>
+</head>
+<body>
+    <h1>7 Keys Of the World</h1>
+    <div class="qr-container">
+        <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.google.com/maps?q=40.4319,116.5704" alt="QR Code for Great Wall of China">
+        <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.google.com/maps?q=30.3285,35.4444" alt="QR Code for Petra">
+        <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.google.com/maps?q=-22.9519,-43.2105" alt="QR Code for Christ the Redeemer">
+        <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.google.com/maps?q=-13.1631,-72.5450" alt="QR Code for Machu Picchu">
+        <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.google.com/maps?q=20.6830,-88.5696" alt="QR Code for Chichen Itza">
+        <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.google.com/maps?q=41.8902,12.4922" alt="QR Code for Roman Colosseum">
+        <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.google.com/maps?q=27.1751,78.0421" alt="QR Code for Taj Mahal">
+    </div>
+</body>
+</html>
